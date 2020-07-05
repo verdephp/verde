@@ -1,0 +1,27 @@
+; This file is for unifying the coding style for different editors and IDEs.
+; More information at http://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+max_line_length = 120
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.yml]
+indent_size = 2
+
+[*.php]
+ij_php_align_phpdoc_comments = false
+ij_php_align_phpdoc_param_names = false
+ij_php_phpdoc_use_fqcn = true
+ij_php_space_after_unary_not = true
+ij_php_force_short_declaration_array_style = true
+ij_php_comma_after_last_array_element = true

@@ -1,0 +1,60 @@
+{
+    "name": "ceceppa/verde",
+    "description": "a BDD Style library for your PHP tests",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Ceceppa",
+            "email": "info@ceceppa.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Verde\\": "src"
+        },
+        "files": [
+            "index.php",
+            "src/helpers.php"
+        ]
+    },
+    "repositories": {
+        "pest": {
+            "type": "vcs",
+            "url": "https://github.com/pestphp/pest"
+        }
+    },
+    "require-dev": {
+        "ergebnis/phpstan-rules": "^0.15.0",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "nunomaduro/phpinsights": "^1.14",
+        "pestphp/pest": "^0.2.0",
+        "phpstan/phpstan": "^0.12.32",
+        "phpstan/phpstan-strict-rules": "^0.12.2",
+        "phpunit/phpunit": "^9.0",
+        "rector/rector": "^0.7.41",
+        "slevomat/coding-standard": "^6.0@dev",
+        "thecodingmachine/phpstan-strict-rules": "^0.12.0"
+    },
+    "scripts": {
+        "lint": "rector process src && php-cs-fixer fix -v src",
+        "phpinsights": "./vendor/bin/phpinsights -v --no-interaction --min-quality=94 --min-complexity=87 --min-architecture=90 --min-style=97",
+        "test:types": "phpstan analyse --ansi --memory-limit=0",
+        "test:lint": "php-cs-fixer fix src -v --dry-run && rector process src --dry-run",
+        "test:unit": "./vendor/bin/pest --coverage --min=95",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "require": {
+        "ext-runkit7": "*"
+    }
+}

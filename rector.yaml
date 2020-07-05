@@ -1,0 +1,11 @@
+parameters:
+    paths:
+        - 'src'
+    sets:
+        - 'phpstan'
+        - 'phpunit-code-quality'
+        - 'solid'
+        - 'code-quality'
+        - 'php71'
+        - 'php72'
+        - 'php73'

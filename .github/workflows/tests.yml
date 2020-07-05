@@ -1,0 +1,59 @@
+name: Tests
+
+on: ['push', 'pull_request']
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [7.3]
+        dependency-version: [prefer-lowest, prefer-stable]
+
+    name: Tests P${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.composer/cache/files
+          key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, mbstring, zip
+
+      - name: Install runkit7
+        run: |
+          git clone https://github.com/runkit7/runkit7.git
+          cd runkit7
+          phpize
+          ./configure
+          make
+          make test
+          sudo make install
+
+          # Find the php.ini file
+          dotini=$(php --ini | grep "Path: ")
+          dotini=$(echo ${dotini#*: })
+
+          dotini_path=$dotini/php.ini
+          echo "Updating php.ini file: $dotini_path"
+
+          # "Enable the extension"
+          sudo bash -c "sed -i 's/\[CLI Server\]/extension=runkit7\n\[CLI Server\]/g' $dotini_path"
+
+      - name: Install Composer dependencies
+        run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
+
+      - name: Unit Tests
+        run: composer test
+
