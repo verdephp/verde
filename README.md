@@ -14,7 +14,8 @@
 
 **Verde** is a composer library, inspired to Jasmine and Jest, for writing tests with [PHPUnit](https://phpunit.de/) and [pest](https://pestphp.com/) 
 using BDD style syntax, and nicer exceptions messages.
-It also offers mocks and spies thanks to the power of [runkit7](https://github.com/runkit7/runkit7).
+
+It also offers [mocks](https://verdephp.github.io/en/mocks.html) and [spies](https://verdephp.github.io/en/spies.html) thanks to the power of [runkit7](https://github.com/runkit7/runkit7).
 
 ## Getting Started
 
