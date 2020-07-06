@@ -1,8 +1,8 @@
 # Verde
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/verdephp/verde/master/art/assert-example" width="600" alt="Verde">
-    <img src="https://raw.githubusercontent.com/verdephp/verde/master/art/expect-example" width="600" alt="Assertion failed example">
+    <img src="https://raw.githubusercontent.com/verdephp/verde/master/art/assert-example.png" width="600" alt="Verde">
+    <img src="https://raw.githubusercontent.com/verdephp/verde/master/art/expect-example.png" width="600" alt="Assertion failed example">
     <p align="center">
         <a href="https://github.com/verdephp/verde/actions">
             <img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/workflow/status/verdephp/verde/Tests/master" />
