@@ -1,7 +1,8 @@
 # Verde
 
 <p align="center">
-    <img src="https://repository-images.githubusercontent.com/277139327/61f58c80-be1e-11ea-97fd-ab0abe2e7a34" width="600" alt="Verde">
+    <img src="https://raw.githubusercontent.com/verdephp/verde/master/art/assert-example" width="600" alt="Verde">
+    <img src="https://raw.githubusercontent.com/verdephp/verde/master/art/expect-example" width="600" alt="Assertion failed example">
     <p align="center">
         <a href="https://github.com/verdephp/verde/actions">
             <img alt="GitHub Workflow Status (master)" src="https://img.shields.io/github/workflow/status/verdephp/verde/Tests/master" />
@@ -11,8 +12,8 @@
 
 ## a BDD Style Library for your PHP Tests
 
-**Verde** is a composer library, inspired to Jasmine and Jest, for writing tests [PHPUnit](https://phpunit.de/) and [pest](https://pestphp.com/) 
-using BDD style syntax.
+**Verde** is a composer library, inspired to Jasmine and Jest, for writing tests with [PHPUnit](https://phpunit.de/) and [pest](https://pestphp.com/) 
+using BDD style syntax, and nicer exceptions messages.
 It also offers mocks and spies thanks to the power of [runkit7](https://github.com/runkit7/runkit7).
 
 ## Getting Started

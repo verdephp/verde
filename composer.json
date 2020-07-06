@@ -1,5 +1,5 @@
 {
-    "name": "ceceppa/verde",
+    "name": "verdephp/verde",
     "description": "a BDD Style library for your PHP tests",
     "type": "library",
     "license": "MIT",
